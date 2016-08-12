@@ -3,3 +3,8 @@
 /home/reagan/TBON/TBON/bin/Debug/TBON.exe
 /home/reagan/TBON/TBON/obj/x86/Debug/TBON.exe
 /home/reagan/TBON/TBON/obj/x86/Debug/TBON.exe.mdb
+/home/reagan/TBON/src/TBON/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/reagan/TBON/src/TBON/obj/x86/Debug/TBON.exe
+/home/reagan/TBON/src/TBON/obj/x86/Debug/TBON.exe.mdb
+/home/reagan/TBON/src/TBON/bin/Debug/TBON.exe.mdb
+/home/reagan/TBON/src/TBON/bin/Debug/TBON.exe

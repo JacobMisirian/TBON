@@ -37,7 +37,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ISerializable.cs" />
     <Compile Include="TBONElements\TBONArray.cs" />
-    <Compile Include="TBONElements\TBONAttributeType.cs" />
     <Compile Include="TBONElements\TBONClass.cs" />
     <Compile Include="TBONElements\TBONKeyValuePair.cs" />
     <Compile Include="TBONElements\TBONObject.cs" />
@@ -47,6 +46,8 @@
     <Compile Include="TBONParser\Lexer\Scanner.cs" />
     <Compile Include="TBONParser\Parser.cs" />
     <Compile Include="TBONParser\ExpectedTokenException.cs" />
+    <Compile Include="TBONElements\TBONObjectNotFoundException.cs" />
+    <Compile Include="TBONElements\TBONAttributeNotFoundException.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

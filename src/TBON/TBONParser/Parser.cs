@@ -45,7 +45,7 @@ namespace TBON
             TBONObject result = new TBONObject(expectToken(TokenType.Identifier).Value);
             expectToken(TokenType.Colon);
             while (!acceptToken(TokenType.CloseParentheses))
-                result.AddEntry(parseKeyValuePair());
+                result.AddAttribute(parseKeyValuePair());
             return result;
         }
 

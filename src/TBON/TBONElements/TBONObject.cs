@@ -145,7 +145,7 @@ namespace TBON
             StringBuilder sb = new StringBuilder();
             for (int i = 0; i < indent; i++)
                 sb.Append("    ");
-            sb.AppendFormat("({0}:\n", Name);
+            sb.AppendFormat("{0}:(\n", Name);
 
             if (ParentClass.IsPrototype)
             {

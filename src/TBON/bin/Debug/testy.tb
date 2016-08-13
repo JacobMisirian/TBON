@@ -1,0 +1,8 @@
+Employee (lastName, duties) {
+    (John:
+        "Smith", ["manager", "grunt"] 
+    )
+    (Suzy:
+        "Jenkins" 
+    )
+}

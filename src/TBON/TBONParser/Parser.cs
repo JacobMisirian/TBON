@@ -53,9 +53,9 @@ namespace TBON
 
         private TBONObject parseObject(TBONClass parent)
         {
-            expectToken(TokenType.OpenParentheses);
             TBONObject result = new TBONObject(expectToken(TokenType.Identifier).Value, parent);
             expectToken(TokenType.Colon);
+            expectToken(TokenType.OpenParentheses);
             if (parent.IsPrototype)
                 parsePrototypeKeyValuePairs(result);
             else while (!acceptToken(TokenType.CloseParentheses))

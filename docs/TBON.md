@@ -61,3 +61,25 @@ On the first line you can see that the class name still comes first, followed
 by a leading parentheses with a list of all the keys each employee object will
 need to define. Then inside of the object declarations it lists the values that
 match up with the prototype.
+
+## Arrays
+
+Until this point the examples have centered around having strings be the values
+in our TBON code. However, you can have a list, or array of these strings
+be the value for a TBON object. Arrays start with a [, contain strings seperated
+by an optional comma, and end with a ].
+
+We can update our employee class to include a field for previous salaries that
+will have a value of an array type:
+```
+Employees (firstName, lastName, pay, pastPay) {
+    1:(
+        "John", "Smith", "50000", ["45000", "52000", "43000"] 
+    )
+    2:(
+        "Jane", "Doe", "55000", ["56000", "52000"] 
+    )
+}
+```
+
+The values inside the [ ] are all one array that is the value for ```pastPay```

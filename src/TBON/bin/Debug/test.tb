@@ -1,8 +1,8 @@
-Employees (firstName, lastName, pay) {
+Employees (firstName, lastName, pay, pastPay) {
     1:(
-        "John", "Smith", "50000" 
+        "John", "Smith", "50000", ["45000", "52000", "43000"] 
     )
     2:(
-        "Jane", "Doe", "55000" 
+        "Jane", "Doe", "55000", ["56000", "52000"] 
     )
 }

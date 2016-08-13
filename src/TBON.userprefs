@@ -1,11 +1,11 @@
 ﻿<Properties StartupItem="TBON/TBON.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="TBON/Program.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="TBON/TBONElements/TBONObject.cs">
     <Files>
       <File FileName="TBON/Program.cs" Line="17" Column="104" />
-      <File FileName="TBON/TBONParser/Lexer/Token.cs" Line="9" Column="9" />
-      <File FileName="TBON/TBONParser/Lexer/Scanner.cs" Line="33" Column="35" />
-      <File FileName="TBON/TBONParser/Parser.cs" Line="11" Column="10" />
+      <File FileName="TBON/TBONElements/TBONObject.cs" Line="89" Column="23" />
+      <File FileName="TBON/TBONParser/Parser.cs" Line="48" Column="36" />
+      <File FileName="TBON/TBONElements/TBONObjectNotFoundException.cs" Line="30" Column="60" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,7 +13,6 @@
           <Node name="TBON" expanded="True">
             <Node name="TBON" expanded="True">
               <Node name="TBONParser" expanded="True" />
-              <Node name="Program.cs" selected="True" />
             </Node>
           </Node>
         </State>

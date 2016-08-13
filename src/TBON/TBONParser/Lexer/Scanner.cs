@@ -25,6 +25,9 @@ namespace TBON
                 {
                     switch ((char)peekChar())
                     {
+                        case '#':
+                            scanComment();
+                            break;
                         case '\"':
                             scanString();
                             break;
@@ -78,6 +81,12 @@ namespace TBON
                 sb.Append((char)readChar());
             readChar(); // "
             result.Add(new Token(TokenType.String, sb.ToString()));
+        }
+
+        private void scanComment()
+        {
+            while ((char)peekChar() != '\n' && peekChar() != -1)
+                readChar();
         }
 
         private void whiteSpace()

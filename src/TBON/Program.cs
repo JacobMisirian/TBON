@@ -8,12 +8,12 @@ namespace TBON
         public static void Main(string[] args)
         {
             /*
-            TBONClass clazz = new TBONClass("Employee");
-            clazz.AddObject("John").AddEntry("lastName", "Smith").AddEntry("duties", new string[] { "manager", "grunt" });
-            clazz.AddObject("Suzy").AddEntry("lastName", "Jenkins");
+            TBONClass clazz = new TBONClass("Employee", new string[] { "lastName", "duties"  });
+            clazz.AddObject("John").AddAttribute("lastName", "Smith").AddAttribute("duties", new string[] { "manager", "grunt" });
+            clazz.AddObject("Suzy").AddAttribute("lastName", "Jenkins");
 
-            File.WriteAllText(args[0], clazz.Serialize());
-            */
+            File.WriteAllText(args[0], clazz.Serialize());*/
+
             File.WriteAllText(args[1], Parser.ParseTBONSource(File.ReadAllText(args[0]))[0].Serialize());
         }
     }

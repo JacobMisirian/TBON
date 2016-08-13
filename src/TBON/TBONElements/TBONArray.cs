@@ -30,7 +30,7 @@ namespace TBON
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.AppendFormat("[ {0}", Elements[0].Serialize(indent));
+            sb.AppendFormat("[{0}", Elements[0].Serialize(indent));
             for (int i = 1; i < Elements.Count; i++)
                 sb.AppendFormat(", {0}", Elements[i].Serialize(indent));
             sb.Append("]");

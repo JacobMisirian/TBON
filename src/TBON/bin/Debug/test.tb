@@ -1,9 +1,0 @@
-Employee {
-    (John:
-        lastName : "Smith"
-        duties : [ "manager", "grunt"]
-    )
-    (Suzy:
-        lastName : "Jenkins"
-    )
-}

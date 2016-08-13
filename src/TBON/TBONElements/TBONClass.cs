@@ -19,10 +19,37 @@ namespace TBON
         /// </summary>
         /// <value>The objects.</value>
         public List<TBONObject> Objects { get; private set; }
-
+        /// <summary>
+        /// Gets the prototypes.
+        /// </summary>
+        /// <value>The prototypes.</value>
+        public List<string> Prototypes { get; private set; }
+        /// <summary>
+        /// Gets a value indicating whether this instance is prototype.
+        /// </summary>
+        /// <value><c>true</c> if this instance is prototype; otherwise, <c>false</c>.</value>
+        public bool IsPrototype { get { return Prototypes.Count > 0; } }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TBON.TBONClass"/> class.
+        /// </summary>
+        /// <param name="name">Name.</param>
+        /// <param name="objects">Objects.</param>
         public TBONClass(string name, params TBONObject[] objects)
         {
             Name = name;
+            Prototypes = new List<string>();
+            Objects = new List<TBONObject>(objects);
+        }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TBON.TBONClass"/> class.
+        /// </summary>
+        /// <param name="name">Name.</param>
+        /// <param name="prototypes">Prototypes.</param>
+        /// <param name="objects">Objects.</param>
+        public TBONClass(string name, string[] prototypes, params TBONObject[] objects)
+        {
+            Name = name;
+            Prototypes = new List<string>(prototypes);
             Objects = new List<TBONObject>(objects);
         }
         /// <summary>
@@ -43,7 +70,7 @@ namespace TBON
         /// <param name="pairs">Pairs.</param>
         public TBONObject AddObject(string name, params TBONKeyValuePair[] pairs)
         {
-            return AddObject(new TBONObject(name, pairs));
+            return AddObject(new TBONObject(name, this, pairs));
         }
         /// <summary>
         /// Gets the object.
@@ -78,6 +105,13 @@ namespace TBON
             for (int i = 0; i < indent; i++)
                 sb.Append("    ");
             sb.Append(Name);
+            if (IsPrototype)
+            {
+                sb.AppendFormat(" ({0}", Prototypes[0]);
+                for (int i = 1; i < Prototypes.Count; i++)
+                    sb.AppendFormat(", {0}", Prototypes[i]);
+                sb.Append(")");
+            }
             sb.AppendLine(" {");
 
             foreach (var obj in Objects)

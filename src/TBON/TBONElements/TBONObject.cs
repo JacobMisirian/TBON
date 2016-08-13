@@ -20,13 +20,19 @@ namespace TBON
         /// <value>The entries.</value>
         public List<TBONKeyValuePair> Attributes { get; private set; }
         /// <summary>
+        /// Gets the parent class.
+        /// </summary>
+        /// <value>The parent class.</value>
+        public TBONClass ParentClass { get; private set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="TBON.TBONObject"/> class.
         /// </summary>
         /// <param name="name">Name.</param>
         /// <param name="pairs">Pairs.</param>
-        public TBONObject(string name, params TBONKeyValuePair[] pairs)
+        public TBONObject(string name, TBONClass parent, params TBONKeyValuePair[] pairs)
         {
             Name = name;
+            ParentClass = parent;
             Attributes = new List<TBONKeyValuePair>(pairs);
         }
         /// <summary>
@@ -140,11 +146,26 @@ namespace TBON
             for (int i = 0; i < indent; i++)
                 sb.Append("    ");
             sb.AppendFormat("({0}:\n", Name);
-            foreach (var Attribute in Attributes)
+
+            if (ParentClass.IsPrototype)
             {
                 for (int i = 0; i < indent + 1; i++)
                     sb.Append("    ");
-                sb.Append(Attribute.Serialize(indent + 1));
+                foreach (string proto in ParentClass.Prototypes)
+                    foreach (var attrib in Attributes)
+                        if (attrib.Key == proto)
+                            sb.AppendFormat("{0}, ", attrib.Value.Serialize());
+                sb.Remove(sb.Length - 2, 1);
+                sb.AppendLine();
+            }
+            else
+            {
+                foreach (var Attribute in Attributes)
+                {
+                    for (int i = 0; i < indent + 1; i++)
+                        sb.Append("    ");
+                    sb.Append(Attribute.Serialize(indent + 1));
+                }
             }
             for (int i = 0; i < indent; i++)
                 sb.Append("    ");

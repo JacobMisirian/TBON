@@ -17,15 +17,47 @@ ID to name each object.
 
 ```
 Employees {
-    (1:
+    1:(
         firstName : "John"
         lastName : "Smith"
         pay : "50000"
     )
-    (2:
+    2:(
         firstName : "Jane"
         lastName : "Doe"
         pay : "55000"
     )
 }
 ```
+
+The first line of this code defines a class named ```Employees```. You will
+notice that a class begins and ends with a curly brace { and }. From there
+is the first object declaration, an object named ```1``` (the employee ID
+in this case). ```1``` is declared with the name, followed by a colon, followed
+by an open parentheses. From there the attributes are defined in key : value
+format.
+
+## Prototyping
+
+TBON supports what is called prototyping. It allows someone writing TBON files
+to simplify, organize, and reduce the verbosity of the classes they are writing.
+Prototyping works where a list of keys is defined next to the class name, then object
+children of the class do not have to use the key : value format, instead just listing
+the values that match the keys in the prototype.
+
+Here is the example above written using prototyping:
+```
+Employees (firstName, lastName, pay) {
+    1:(
+        "John", "Smith", "50000" 
+    )
+    2:(
+        "Jane", "Doe", "55000" 
+    )
+}
+```
+
+On the first line you can see that the class name still comes first, followed
+by a leading parentheses with a list of all the keys each employee object will
+need to define. Then inside of the object declarations it lists the values that
+match up with the prototype.
